@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 import { heroCredentials as heroCredentialsRu, heroStats as heroStatsRu } from "@/config/site"
 import { heroCredentials as heroCredentialsEn, heroStats as heroStatsEn } from "@/config/site-en"
+import { assetPath } from "@/lib/utils"
 
 interface HeroSectionProps {
   lang?: "ru" | "en"
@@ -120,7 +121,7 @@ export function HeroSection({ lang = "ru" }: HeroSectionProps) {
               
               <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden bg-gradient-to-br from-primary/10 to-primary/5">
                 <img  
-                  src="/ekaterina.webp"
+                  src={assetPath("/ekaterina.webp")}
                   alt={lang === "en" 
                     ? "Ekaterina Kulbachinskaya — Pediatric Cardiologist-Arrhythmologist" 
                     : "Екатерина Кульбачинская — детский кардиолог-аритмолог"
