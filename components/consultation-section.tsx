@@ -19,6 +19,7 @@ import { toast } from "sonner"
 import { consultationTypes as consultationTypesRu } from "@/config/site"
 import { consultationTypes as consultationTypesEn } from "@/config/site-en"
 import { useAnimateOnScroll } from "@/components/animate-on-scroll"
+import { basePath } from "@/lib/utils"
 
 interface ConsultationSectionProps {
   lang?: "ru" | "en"
@@ -79,7 +80,7 @@ export function ConsultationSection({ lang = "ru" }: ConsultationSectionProps) {
     setIsSubmitting(true)
     
     try {
-      const response = await fetch("/api/telegram", {
+      const response = await fetch(`${basePath}/api/telegram`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
